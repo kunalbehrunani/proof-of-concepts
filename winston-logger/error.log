@@ -1,0 +1,9 @@
+{"level":"error","message":"Hello"}
+{"level":"error","message":"Hello"}
+{"level":"error","message":"Hello"}
+{"level":"error","message":"Hello"}
+{"level":"error","message":"Hello"}
+** Production Log **-2022-12-02T10:35:27.317Z [error] ===> Hello
+** Production Log ** | 2022-12-02T10:35:37.729Z [error] ===> Hello
+** Production Log ** | 2022-12-02 16:08:18 [error] ===> Hello
+** Production Log ** | 2022-12-02 16:11:16 [[31merror[39m] ===> Hello
