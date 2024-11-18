@@ -2,4 +2,8 @@ node_modules/*
 
 node_modules/
 
+*.lock
+
+**/yarn.lock
+
 dist/
