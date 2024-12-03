@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://unpkg.com/vue@2/dist/vue.js"></script> -->
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <!-- <button @click="changeMessage">Change The Message</button> -->
+         <button @click="showAlert(`Hello ${message}`)">Say Hello Button</button>
+
+        
+    </div>
+
+    <!-- <div id="app2">
+        <h1>{{ message }}</h1>
+    </div> -->
+</body>
+</html>
+
+<script>
+    const { createApp } = Vue;
+
+    setTimeout(() => {
+        createApp({
+        data() {
+        return { message: 'Hello Vue! Welcome' };
+        },
+        methods: {
+            changeMessage() {
+                this.message = 'Hello Vue! Welcome 2'
+            },
+            showAlert(message) {
+                setTimeout(() => {
+                    alert(message)
+                }, 2000)
+            },
+            showAlertV2: function(message) {
+                setTimeout(() => {
+                    alert(message)
+                }, 2000)
+            }
+        }
+    }).mount('#app')
+    }, 100)
+
+    
+
+    // const app = new Vue({
+    //     // Since vue is a progressive framework, we can use it on sub elements in the webpage. To control what elements vue mounts on, we use the el property.
+    //     el: '#app',
+    //     data: {
+    //         message: 'Hello Vue! Welcome',
+    //         changeMessageCount: 0
+    //     },
+    //     methods: { 
+    //         changeMessage() {
+    //             this.changeMessageCount += 1;
+    //             this.message = `Hello Vue! Welcome ${this.changeMessageCount}`
+    //         }
+    //     }
+    // });
+
+    // const app2 = new Vue({
+    //     el: '#app2',
+    //     data: {
+    //         message: 'Hello Vue! Welcome 2'
+    //     }
+    // });
+</script>
