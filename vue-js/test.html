@@ -9,9 +9,15 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- <script src="https://unpkg.com/vue@2/dist/vue.js"></script> -->
     <div id="app">
-        <h1>{{ message }}</h1>
+        <h1>{{ message }} Hi there</h1>
         <!-- <button @click="changeMessage">Change The Message</button> -->
          <button @click="showAlert(`Hello ${message}`)">Say Hello Button</button>
+         <br>
+         <br>
+         <br>
+         <button v-on:dblclick="showAlert(`Double Clicked ${message}`)">Double Click Button</button>
+         <img v-bind:src="imageUrl">
+         <button v-on:click="changeImage">Change Image</button>
 
         
     </div>
@@ -28,7 +34,10 @@
     setTimeout(() => {
         createApp({
         data() {
-        return { message: 'Hello Vue! Welcome' };
+        return {
+            message: 'Hello Vue! Welcome',
+            imageUrl: 'https://fastly.picsum.photos/id/779/200/300.jpg?hmac=DmFN06G0c1N5TAbj2O9YljZ0Vr8VWOZ4lPjLG8oAf8o'
+         };
         },
         methods: {
             changeMessage() {
@@ -37,12 +46,15 @@
             showAlert(message) {
                 setTimeout(() => {
                     alert(message)
-                }, 2000)
+                }, 0)
             },
             showAlertV2: function(message) {
                 setTimeout(() => {
                     alert(message)
                 }, 2000)
+            },
+            changeImage() {
+                this.imageUrl = 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U'
             }
         }
     }).mount('#app')
